@@ -38,7 +38,7 @@ export class MealService{
     }
 
     async deleteMeal(meal){
-        return await meal.update({ status: 'disable'})
+        return await meal.update({ status: 'disabled'})
     }
 
 }

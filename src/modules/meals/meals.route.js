@@ -21,6 +21,6 @@ router
     .route('/:id')
     .post(validExistRestaurant,createMealToRestaurant)
     .get(findOneMeal)
-    .patch(validExistMeal,protectAccountOwner,updateMeal)
-    .delete(validExistMeal,protectAccountOwner,deleteMeal)
+    .patch(validExistMeal,updateMeal)
+    .delete(validExistMeal,deleteMeal)
 

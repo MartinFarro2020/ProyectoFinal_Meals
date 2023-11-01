@@ -1,7 +1,6 @@
 import { catchAsync } from "../../errors/index.js"
 import { RestaurantService} from "./restaurant.service.js"
 import { ReviewService } from "../review/review.service.js"
-import Restaurant from "./restaurant.model.js"
 import { updateRestaurants } from "./restaurant.schema.js"
 
 const restaurantService = new RestaurantService()

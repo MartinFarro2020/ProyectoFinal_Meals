@@ -7,6 +7,7 @@ import { UserService } from "./users.services.js";
 
 const userService = new UserService()
 
+
 export const login = catchAsync(async(req,res,next)=>{
     const { hasError, errorMessages, userData} = validateLogin(req.body)
     
@@ -108,6 +109,7 @@ export const deleteUser = catchAsync(async(req,res,next)=>{
   
     return res.status(200).json(deleteUser);
 });
+
 
 export default generateJWT
  

@@ -1,7 +1,7 @@
 import express from 'express';
 import { validExistRestaurant } from '../restaurants/restaurant.middleware.js'
 import { validExistMeal } from '../meals/meals.middleware.js'
-import { protectAccountOwner } from '../users/auth.middleware.js'
+import { restrictTo } from '../users/auth.middleware.js'
 
 export const router = express.Router()
 
@@ -19,8 +19,8 @@ router
     
 router
     .route('/:id')
-    .post(validExistRestaurant,createMealToRestaurant)
+    .post(restrictTo('admin'),validExistRestaurant,createMealToRestaurant)
     .get(findOneMeal)
-    .patch(validExistMeal,updateMeal)
-    .delete(validExistMeal,deleteMeal)
+    .patch(restrictTo('admin'),validExistMeal,updateMeal)
+    .delete(restrictTo('admin'),validExistMeal,deleteMeal)
 

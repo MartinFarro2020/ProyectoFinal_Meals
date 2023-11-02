@@ -48,12 +48,13 @@ export const updateOrder = catchAsync(async(req,res,next)=>{
     return res.status(200).json(updatedOrder);
 
 })
+
 export const deleteOrder = catchAsync(async(req,res,next)=>{
-      
+
     const { id } = req.params;
   
     const order = await orderService.findOneById(id);
-  
+
     if (!order) {
       return next(new AppError(`Can't find order with id: ${id}`, 404));
     }

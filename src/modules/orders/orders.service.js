@@ -6,7 +6,6 @@ export class OrderService{
         return await Order.findAll({
             where:{
                 userId:id,
-                status:'active'
             }
         })
     }
@@ -25,6 +24,8 @@ export class OrderService{
         })
 
     }
+
+    
     
     async findOneOrder(id, restaurantId){
         return await Order.findOne({

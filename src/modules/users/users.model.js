@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize"
 import sequelize from "../../config/database/database.js"
 import { encryptedPassword } from "../../config/plugins/encriptedPassword.js"
 
-const User = sequelize.define('User', {
+const User = sequelize.define('user', {
     id: {
       primaryKey: true,
       allowNull: false,

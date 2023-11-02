@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize"
 import sequelize from "../../config/database/database.js"
 
-const Meals = sequelize.define('Meals', {
+const Meals = sequelize.define('meals', {
     id: {
       primaryKey: true,
       allowNull: false,
